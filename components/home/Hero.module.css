@@ -1,31 +1,41 @@
 /* ==========================================================================
    Hero Section
-   Modern, spacious, clean, and responsive split hero.
-   Seamless gradient blend with van & technician photo.
+   Split 2-column composition matching 1728 x 864 reference:
+   - Text column ~45-48% width
+   - Photograph fills right side, extends to right viewport edge
+   - Seamless soft left-edge fade into the light background
+   - Compact vertical layout so all elements fit cleanly without clipping
    ========================================================================== */
 
 .hero {
   position: relative;
-  background: linear-gradient(135deg, #eef7fc 0%, #f6fafd 55%, #e1f1f8 100%);
+  background-color: #f7fbfe;
+  background-image: linear-gradient(135deg, #edf6fc 0%, #f7fbfe 50%, #e0f0f8 100%);
   overflow: hidden;
-  padding-top: clamp(2.5rem, 2rem + 3vw, 4.5rem);
-  padding-bottom: clamp(3rem, 2.5rem + 3.5vw, 5.5rem);
+  padding-top: clamp(2rem, 1.5rem + 1.8vw, 3.25rem);
+  padding-bottom: clamp(2rem, 1.5rem + 1.8vw, 3.25rem);
+  width: 100%;
   border-bottom: 1px solid var(--color-border);
 }
 
-/* Master container layout: 2-column on desktop, single column on mobile */
-.container {
+/* Master container: allows photo to bleed to right edge while keeping left inset */
+.heroContainer {
+  width: 100%;
+  max-width: 1728px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(1.5rem, 5vw, 6.5rem);
+  padding-right: 0;
   display: grid;
   grid-template-columns: 1fr;
   align-items: center;
-  gap: var(--space-6);
   position: relative;
 }
 
-@media (min-width: 58em) {
-  .container {
-    grid-template-columns: 1.05fr 1fr;
-    gap: clamp(var(--space-5), 2vw, var(--space-7));
+@media (min-width: 62em) {
+  .heroContainer {
+    grid-template-columns: 46fr 54fr;
+    gap: 0;
   }
 }
 
@@ -37,51 +47,27 @@
   flex-direction: column;
   position: relative;
   z-index: 5;
-}
-
-.badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.8125rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--color-teal-dark);
-  background-color: rgb(14 159 154 / 0.1);
-  padding: 0.35rem 0.85rem;
-  border-radius: 9999px;
-  width: fit-content;
-  margin-bottom: var(--space-4);
-  border: 1px solid rgb(14 159 154 / 0.2);
-}
-
-.badgeDot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background-color: var(--color-teal);
+  padding-right: clamp(1rem, 2.5vw, 3rem);
 }
 
 .title {
-  font-size: clamp(2.25rem, 1.7rem + 2.4vw, 3.75rem);
+  font-size: clamp(2.35rem, 1.8rem + 2.4vw, 4.15rem);
   line-height: 1.1;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
   color: var(--color-navy);
   font-weight: 900;
-  margin-bottom: var(--space-4);
-}
-
-.titleLine2 {
-  color: var(--color-navy);
+  margin-bottom: clamp(1rem, 0.8rem + 0.8vw, 1.5rem);
+  white-space: normal;
 }
 
 .lead {
-  font-size: clamp(1.1rem, 1rem + 0.35vw, 1.35rem);
-  line-height: 1.5;
-  color: var(--color-slate);
-  margin-bottom: var(--space-6);
-  max-width: 42ch;
+  font-size: clamp(1.1rem, 0.95rem + 0.5vw, 1.55rem);
+  line-height: 1.38;
+  color: var(--color-navy);
+  opacity: 0.9;
+  font-weight: 400;
+  margin-bottom: clamp(1.5rem, 1.2rem + 1vw, 2.25rem);
+  max-width: 44ch;
 }
 
 .breakDesktop {
@@ -95,13 +81,13 @@
 }
 
 /* ──────────────────────────────────────────────────────────
-   CTA Buttons: Rounded Pill Shape with clear tactile feel
+   CTA Buttons: Rounded Pill Shape
    ────────────────────────────────────────────────────────── */
 .ctaGroup {
   display: flex;
   flex-direction: column;
-  gap: var(--space-3);
-  margin-bottom: clamp(2rem, 1.75rem + 1vw, 3rem);
+  gap: 1rem;
+  margin-bottom: clamp(1.75rem, 1.4rem + 1vw, 2.75rem);
 }
 
 @media (min-width: 32em) {
@@ -118,21 +104,25 @@
   justify-content: center !important;
   gap: 0.5rem;
   border-radius: 9999px !important;
-  background-color: var(--color-teal-dark) !important;
+  background-color: #0e9f9a !important;
   color: #ffffff !important;
   font-weight: 700 !important;
-  font-size: 1.0625rem !important;
-  padding: 0.85rem 2rem !important;
-  min-height: 54px !important;
+  font-size: clamp(1rem, 0.92rem + 0.25vw, 1.15rem) !important;
+  padding: 0.85rem 2.2rem !important;
+  min-height: 56px !important;
   border: 2px solid transparent !important;
-  box-shadow: 0 4px 14px rgb(10 124 120 / 0.35) !important;
+  box-shadow: 0 4px 14px rgb(14 159 154 / 0.28) !important;
   white-space: nowrap;
-  transition: transform var(--duration-fast) var(--ease-out), background-color var(--duration-fast) var(--ease-out) !important;
+  transition: background-color 0.2s ease, transform 0.15s ease !important;
 }
 
 .primaryCta:hover {
-  background-color: #086360 !important;
-  transform: translateY(-2px);
+  background-color: #0a7c78 !important;
+  transform: translateY(-1px);
+}
+
+.phoneIcon {
+  flex-shrink: 0;
 }
 
 .secondaryCta {
@@ -141,18 +131,21 @@
   justify-content: center !important;
   border-radius: 9999px !important;
   background-color: transparent !important;
-  color: var(--color-teal-dark) !important;
-  border: 2px solid var(--color-teal-dark) !important;
+  color: #0e9f9a !important;
+  border: 2px solid #0e9f9a !important;
   font-weight: 700 !important;
-  font-size: 1.0625rem !important;
-  padding: 0.85rem 2rem !important;
-  min-height: 54px !important;
+  font-size: clamp(1rem, 0.92rem + 0.25vw, 1.15rem) !important;
+  padding: 0.85rem 2.2rem !important;
+  min-height: 56px !important;
+  box-shadow: none !important;
   white-space: nowrap;
-  transition: background-color var(--duration-fast) var(--ease-out), color var(--duration-fast) var(--ease-out) !important;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease !important;
 }
 
 .secondaryCta:hover {
-  background-color: rgb(14 159 154 / 0.1) !important;
+  background-color: rgb(14 159 154 / 0.08) !important;
+  color: #0a7c78 !important;
+  border-color: #0a7c78 !important;
 }
 
 @media (max-width: 32em) {
@@ -170,9 +163,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
-  gap: var(--space-4) var(--space-5);
-  padding-top: var(--space-4);
-  border-top: 1px solid rgb(18 48 71 / 0.12);
+  gap: clamp(1rem, 1.5vw, 2.25rem);
 }
 
 .trustItem {
@@ -185,7 +176,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-teal-dark);
+  color: #0e9f9a;
   flex-shrink: 0;
 }
 
@@ -194,7 +185,7 @@
 }
 
 .trustText {
-  font-size: 0.875rem;
+  font-size: clamp(0.85rem, 0.78rem + 0.2vw, 0.98rem);
   font-weight: 700;
   color: var(--color-navy);
   line-height: 1.25;
@@ -202,41 +193,37 @@
 
 /* ──────────────────────────────────────────────────────────
    Right Column: Media / Photograph
-   Blends seamlessly into the hero background
+   Bleeds smoothly to right viewport edge with soft left fade
    ────────────────────────────────────────────────────────── */
 .mediaContainer {
   position: relative;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .mediaFrame {
   position: relative;
   width: 100%;
   overflow: hidden;
-  border-radius: var(--radius-lg);
   background-color: transparent;
-  box-shadow: 0 16px 36px -12px rgb(18 48 71 / 0.12);
 }
 
-/* Soft gradient blend on the image edges */
-@media (min-width: 58em) {
-  .mediaFrame {
-    box-shadow: none;
-    border-radius: var(--radius-md);
-  }
-
+/* Seamless gradient blend on the left edge */
+@media (min-width: 62em) {
   .mediaFrame::before {
     content: "";
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
-    width: 25%;
+    width: 28%;
     background: linear-gradient(
       to right,
-      #f6fafd 0%,
-      rgba(246, 250, 253, 0.7) 40%,
-      rgba(246, 250, 253, 0) 100%
+      #f7fbfe 0%,
+      rgba(247, 251, 254, 0.8) 35%,
+      rgba(247, 251, 254, 0) 100%
     );
     z-index: 2;
     pointer-events: none;
@@ -254,12 +241,20 @@
   height: auto;
   aspect-ratio: 16 / 9;
   object-fit: cover;
-  object-position: center;
+  object-position: 25% center;
 }
 
-@media (max-width: 48em) {
-  .heroImgWrapper :global(img) {
-    aspect-ratio: 4 / 3;
-    object-position: center;
+@media (max-width: 62em) {
+  .heroContainer {
+    padding-right: clamp(1.5rem, 5vw, 6.5rem);
+    gap: var(--space-6);
+  }
+
+  .mediaFrame {
+    border-radius: var(--radius-md);
+  }
+
+  .mediaFrame::before {
+    display: none;
   }
 }
