@@ -1,0 +1,265 @@
+/* ==========================================================================
+   Hero Section
+   Modern, spacious, clean, and responsive split hero.
+   Seamless gradient blend with van & technician photo.
+   ========================================================================== */
+
+.hero {
+  position: relative;
+  background: linear-gradient(135deg, #eef7fc 0%, #f6fafd 55%, #e1f1f8 100%);
+  overflow: hidden;
+  padding-top: clamp(2.5rem, 2rem + 3vw, 4.5rem);
+  padding-bottom: clamp(3rem, 2.5rem + 3.5vw, 5.5rem);
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* Master container layout: 2-column on desktop, single column on mobile */
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: var(--space-6);
+  position: relative;
+}
+
+@media (min-width: 58em) {
+  .container {
+    grid-template-columns: 1.05fr 1fr;
+    gap: clamp(var(--space-5), 2vw, var(--space-7));
+  }
+}
+
+/* ──────────────────────────────────────────────────────────
+   Left Column: Content
+   ────────────────────────────────────────────────────────── */
+.content {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 5;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-teal-dark);
+  background-color: rgb(14 159 154 / 0.1);
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  width: fit-content;
+  margin-bottom: var(--space-4);
+  border: 1px solid rgb(14 159 154 / 0.2);
+}
+
+.badgeDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--color-teal);
+}
+
+.title {
+  font-size: clamp(2.25rem, 1.7rem + 2.4vw, 3.75rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--color-navy);
+  font-weight: 900;
+  margin-bottom: var(--space-4);
+}
+
+.titleLine2 {
+  color: var(--color-navy);
+}
+
+.lead {
+  font-size: clamp(1.1rem, 1rem + 0.35vw, 1.35rem);
+  line-height: 1.5;
+  color: var(--color-slate);
+  margin-bottom: var(--space-6);
+  max-width: 42ch;
+}
+
+.breakDesktop {
+  display: none;
+}
+
+@media (min-width: 48em) {
+  .breakDesktop {
+    display: inline;
+  }
+}
+
+/* ──────────────────────────────────────────────────────────
+   CTA Buttons: Rounded Pill Shape with clear tactile feel
+   ────────────────────────────────────────────────────────── */
+.ctaGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-bottom: clamp(2rem, 1.75rem + 1vw, 3rem);
+}
+
+@media (min-width: 32em) {
+  .ctaGroup {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+}
+
+.primaryCta {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.5rem;
+  border-radius: 9999px !important;
+  background-color: var(--color-teal-dark) !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  font-size: 1.0625rem !important;
+  padding: 0.85rem 2rem !important;
+  min-height: 54px !important;
+  border: 2px solid transparent !important;
+  box-shadow: 0 4px 14px rgb(10 124 120 / 0.35) !important;
+  white-space: nowrap;
+  transition: transform var(--duration-fast) var(--ease-out), background-color var(--duration-fast) var(--ease-out) !important;
+}
+
+.primaryCta:hover {
+  background-color: #086360 !important;
+  transform: translateY(-2px);
+}
+
+.secondaryCta {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 9999px !important;
+  background-color: transparent !important;
+  color: var(--color-teal-dark) !important;
+  border: 2px solid var(--color-teal-dark) !important;
+  font-weight: 700 !important;
+  font-size: 1.0625rem !important;
+  padding: 0.85rem 2rem !important;
+  min-height: 54px !important;
+  white-space: nowrap;
+  transition: background-color var(--duration-fast) var(--ease-out), color var(--duration-fast) var(--ease-out) !important;
+}
+
+.secondaryCta:hover {
+  background-color: rgb(14 159 154 / 0.1) !important;
+}
+
+@media (max-width: 32em) {
+  .primaryCta,
+  .secondaryCta {
+    width: 100% !important;
+  }
+}
+
+/* ──────────────────────────────────────────────────────────
+   Trust Highlights (Row with 3 items)
+   ────────────────────────────────────────────────────────── */
+.trustStrip {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4) var(--space-5);
+  padding-top: var(--space-4);
+  border-top: 1px solid rgb(18 48 71 / 0.12);
+}
+
+.trustItem {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.trustIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-teal-dark);
+  flex-shrink: 0;
+}
+
+.trustIcon svg {
+  display: block;
+}
+
+.trustText {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  line-height: 1.25;
+}
+
+/* ──────────────────────────────────────────────────────────
+   Right Column: Media / Photograph
+   Blends seamlessly into the hero background
+   ────────────────────────────────────────────────────────── */
+.mediaContainer {
+  position: relative;
+  width: 100%;
+}
+
+.mediaFrame {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  background-color: transparent;
+  box-shadow: 0 16px 36px -12px rgb(18 48 71 / 0.12);
+}
+
+/* Soft gradient blend on the image edges */
+@media (min-width: 58em) {
+  .mediaFrame {
+    box-shadow: none;
+    border-radius: var(--radius-md);
+  }
+
+  .mediaFrame::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 25%;
+    background: linear-gradient(
+      to right,
+      #f6fafd 0%,
+      rgba(246, 250, 253, 0.7) 40%,
+      rgba(246, 250, 253, 0) 100%
+    );
+    z-index: 2;
+    pointer-events: none;
+  }
+}
+
+.heroImgWrapper {
+  width: 100%;
+  display: block;
+}
+
+.heroImgWrapper :global(img) {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media (max-width: 48em) {
+  .heroImgWrapper :global(img) {
+    aspect-ratio: 4 / 3;
+    object-position: center;
+  }
+}

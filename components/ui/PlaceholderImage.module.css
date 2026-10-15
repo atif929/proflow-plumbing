@@ -1,0 +1,84 @@
+/* ── PlaceholderImage — wrapper/fallback styles ─────────────────────────── */
+
+/* Wrapper when real image loads successfully */
+.wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--radius-md, 12px);
+  background-color: var(--color-cool-white, #f4f8fa);
+}
+
+.img {
+  display: block;
+  border-radius: inherit;
+  object-fit: cover;
+}
+
+/* ── Placeholder ── */
+.placeholder {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #e8f4f8 0%, #d5eaf0 100%);
+  border: 2px dashed var(--color-teal, #0e9f9a);
+  border-radius: var(--radius-md, 12px);
+  min-height: 220px;
+  padding: var(--space-6, 1.5rem);
+  box-sizing: border-box;
+}
+
+/* Aspect-ratio hints per variant */
+.placeholder[data-variant="landscape"] {
+  aspect-ratio: 4 / 3;
+}
+.placeholder[data-variant="portrait"] {
+  aspect-ratio: 6 / 7;
+  min-height: 280px;
+}
+.placeholder[data-variant="square"] {
+  aspect-ratio: 1 / 1;
+}
+
+.placeholderInner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2, 0.5rem);
+  text-align: center;
+  color: var(--color-teal-dark, #0a7c78);
+}
+
+.icon {
+  opacity: 0.55;
+  flex-shrink: 0;
+}
+
+.badge {
+  display: inline-block;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  background-color: rgba(14, 159, 154, 0.12);
+  color: var(--color-teal-dark, #0a7c78);
+  border-radius: 4px;
+  padding: 2px 8px;
+  word-break: break-all;
+}
+
+.dims {
+  font-size: 0.7rem;
+  color: var(--color-slate, #253746);
+  opacity: 0.65;
+}
+
+.hint {
+  font-size: 0.75rem;
+  color: var(--color-slate, #253746);
+  opacity: 0.75;
+  max-width: 22ch;
+  line-height: 1.4;
+  margin: 0;
+}

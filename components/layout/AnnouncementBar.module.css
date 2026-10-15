@@ -1,0 +1,66 @@
+.bar {
+  background-color: var(--color-navy);
+  color: var(--color-cool-white);
+  border-bottom: 1px solid rgb(255 255 255 / 0.12);
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  padding-block: 0.45rem;
+  letter-spacing: 0.01em;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  text-align: center;
+  max-width: 100%;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.15rem 0.55rem;
+  background: linear-gradient(135deg, rgb(14 159 154 / 0.25), rgb(14 159 154 / 0.15));
+  color: #3fe0d9;
+  border: 1px solid rgb(14 159 154 / 0.5);
+  border-radius: 9999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.text {
+  margin: 0;
+  max-width: none;
+  text-wrap: nowrap;
+  white-space: nowrap;
+  color: rgb(244 248 250 / 0.92);
+  font-weight: 500;
+}
+
+.link {
+  color: #5eead4;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-weight: 600;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.link:hover {
+  color: var(--color-white);
+}
+
+@media (max-width: 56.25em) {
+  .inner {
+    flex-wrap: wrap;
+    gap: 0.35rem 0.5rem;
+  }
+  .text {
+    text-wrap: pretty;
+    white-space: normal;
+  }
+}

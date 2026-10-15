@@ -1,0 +1,290 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: 0 2px 10px rgb(18 48 71 / 0.05);
+  transition: box-shadow var(--duration-base) var(--ease-out);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 4.75rem;
+  gap: var(--space-4);
+}
+
+/* Brand */
+.logoLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  text-decoration: none;
+  color: var(--color-navy);
+  font-weight: 900;
+  font-size: 1.375rem;
+  letter-spacing: -0.02em;
+}
+
+.brandLogoImg {
+  height: 2.25rem;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.logoMark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-teal);
+  color: var(--color-white);
+  flex-shrink: 0;
+}
+
+.logoText {
+  color: var(--color-navy);
+}
+
+.logoAccent {
+  color: var(--color-teal-dark);
+  font-weight: 700;
+  margin-left: 0.15rem;
+}
+
+/* Desktop Nav */
+.nav {
+  display: none;
+}
+
+@media (min-width: 56.25em) {
+  .nav {
+    display: block;
+  }
+}
+
+.navList {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: var(--space-5);
+}
+
+.navLink {
+  color: var(--color-slate);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: var(--text-base);
+  padding-block: var(--space-2);
+  transition: color var(--duration-fast) var(--ease-out);
+  position: relative;
+}
+
+.navLink:hover {
+  color: var(--color-teal-dark);
+}
+
+.navLink:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.phoneGroup {
+  display: none;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+}
+
+@media (min-width: 48em) {
+  .phoneGroup {
+    display: flex;
+  }
+}
+
+.badge247 {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-teal-dark);
+  background-color: rgb(14 159 154 / 0.12);
+  padding: 0.1rem 0.45rem;
+  border-radius: 9999px;
+  margin-bottom: 0.15rem;
+}
+
+.phoneLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-weight: 900;
+  font-size: 1.125rem;
+  color: var(--color-navy);
+  text-decoration: none;
+  line-height: 1.2;
+}
+
+.phoneLink:hover {
+  color: var(--color-teal-dark);
+}
+
+.phoneIcon {
+  color: var(--color-teal-dark);
+}
+
+.callButton {
+  display: none;
+}
+
+@media (min-width: 32em) {
+  .callButton {
+    display: inline-flex;
+    padding-inline: 1.15rem;
+    min-height: 2.65rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* Mobile Toggle */
+.menuToggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  color: var(--color-navy);
+}
+
+@media (min-width: 56.25em) {
+  .menuToggle {
+    display: none;
+  }
+}
+
+.hamburgerIcon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 1.25rem;
+  height: 0.95rem;
+}
+
+.barLine {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: currentColor;
+  border-radius: 2px;
+  transition: transform var(--duration-fast) var(--ease-out), opacity var(--duration-fast) var(--ease-out);
+}
+
+.barLineTopActive {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.barLineMiddleActive {
+  opacity: 0;
+}
+
+.barLineBottomActive {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* Mobile Drawer */
+.mobileMenu {
+  display: none;
+  background-color: var(--color-white);
+  border-top: 1px solid var(--color-border);
+  box-shadow: 0 10px 25px -5px rgb(18 48 71 / 0.15);
+}
+
+@media (max-width: 56.24em) {
+  .mobileMenuOpen {
+    display: block;
+  }
+}
+
+.mobileInner {
+  padding-block: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.mobileNavList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobileNavLink {
+  display: block;
+  padding-block: 0.7rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  text-decoration: none;
+  border-bottom: 1px solid rgb(18 48 71 / 0.08);
+}
+
+.mobileNavLink:hover {
+  color: var(--color-teal-dark);
+}
+
+.mobileCtaBox {
+  background-color: var(--color-cool-white);
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  text-align: center;
+  align-items: center;
+}
+
+.mobileCtaNotice {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-teal-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.mobilePhoneLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: var(--color-navy);
+  text-decoration: none;
+}
+
+.mobileCallBtn {
+  width: 100%;
+}
